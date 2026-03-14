@@ -39,17 +39,13 @@
 </head>
 <body>
 
+<div class="btn-container">
+  <img src="img 1.jpg" class="gallary-img" id="img"/>
+  <img src="left-arrow.png" class="btn btn-left" onclick="prev()" />
+  <img src="right-arrow.png" class="btn btn-right" onclick="next()" />
+</div>
 
 
-<script>
-  const imagesArr = [
-    "img 1.jpg",
-    "img 2.jpg",
-    "img 3.jpg",
-    "img 4.jpg",
-    "img 5.jpg",
-    "img 6.jpg"
-  ];
   let imgIndex = 0;
   
   const imgElement = document.getElementById('img');
