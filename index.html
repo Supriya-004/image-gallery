@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Image Gallery</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    .gallary-img{
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      background-color: tomato;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+    .btn-container{
+      position: relative;
+      width: fit-content;
+      display: block;
+      margin: 10px auto;
+    }
+    .btn{
+      height: 30px;
+      margin: 0 10px;
+      cursor: pointer;
+      background-color: #fff;
+      border-radius: 50%;
+       position: absolute;
+      top: 80px;
+    }
+    .btn-left{
+      left: -30px;
+    }
 
+    .btn-right{
+      right: -30px;
+    }
+  </style>
+</head>
 <body>
 
-<h1 class="title">Image Gallery</h1>
-
-<div class="gallery">
-
-    <div class="card">
-        <img src="images/img1.jpg" onclick="openImage(this)">
-    </div>
-
-    <div class="card">
-        <img src="images/img2.jpg" onclick="openImage(this)">
-    </div>
-
-    <div class="card">
-        <img src="images/img3.jpg" onclick="openImage(this)">
-    </div>
-
-    <div class="card">
-        <img src="images/img4.jpg" onclick="openImage(this)">
-    </div>
-
+<div class="btn-container">
+  <img src="img 1.jpg" class="gallary-img" id="img"/>
+  <img src="left-arrow.png" class="btn btn-left" onclick="prev()" />
+  <img src="right-arrow.png" class="btn btn-right" onclick="next()" />
 </div>
 
-<div id="preview">
-    <span onclick="closeImage()">X</span>
-    <img id="previewImg">
-</div>
+<script>
+  const imagesArr = [
+    "img 1.jpg",
+    "img 2.jpg",
+    "img 3.jpg",
+    "img 4.jpg",
+    "img 5.jpg",
+    "img 6.jpg"
+  ];
+  let imgIndex = 0;
+  
+  const imgElement = document.getElementById('img');
 
-<script src="js/script.js"></script>
-
+  function prev(){
+    if (imgIndex == 0) {
+      imgIndex = imagesArr.length - 1;
+    } else {
+      imgIndex--;
+    }
+    imgElement.src = imagesArr[imgIndex];
+  }
+  function next(){
+    if (imgIndex == imagesArr.length - 1) {
+      imgIndex = 0;
+    } else {
+      imgIndex++;
+    }
+    imgElement.src = imagesArr[imgIndex];
+  }
+</script>
 </body>
 </html>
