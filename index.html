@@ -28,9 +28,7 @@
        position: absolute;
       top: 80px;
     }
-    .btn-left{
-      left: -30px;
-    }
+   
 
     .btn-right{
       right: -30px;
@@ -67,7 +65,14 @@
     }
     imgElement.src = imagesArr[imgIndex];
   }
- 
+  function next(){
+    if (imgIndex == imagesArr.length - 1) {
+      imgIndex = 0;
+    } else {
+      imgIndex++;
+    }
+    imgElement.src = imagesArr[imgIndex];
+  }
 </script>
 </body>
 </html>
