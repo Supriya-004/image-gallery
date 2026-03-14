@@ -45,19 +45,16 @@
   <img src="right-arrow.png" class="btn btn-right" onclick="next()" />
 </div>
 
-
-  let imgIndex = 0;
+<script>
+  const imagesArr = [
+    "img 1.jpg",
+    "img 2.jpg",
+    "img 3.jpg",
+    "img 4.jpg",
+    "img 5.jpg",
+    "img 6.jpg"
+  ];
   
-  const imgElement = document.getElementById('img');
-
-  function prev(){
-    if (imgIndex == 0) {
-      imgIndex = imagesArr.length - 1;
-    } else {
-      imgIndex--;
-    }
-    imgElement.src = imagesArr[imgIndex];
-  }
   function next(){
     if (imgIndex == imagesArr.length - 1) {
       imgIndex = 0;
