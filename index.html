@@ -55,14 +55,19 @@
     "img 6.jpg"
   ];
   
-  function next(){
-    if (imgIndex == imagesArr.length - 1) {
-      imgIndex = 0;
+  let imgIndex = 0;
+  
+  const imgElement = document.getElementById('img');
+
+  function prev(){
+    if (imgIndex == 0) {
+      imgIndex = imagesArr.length - 1;
     } else {
-      imgIndex++;
+      imgIndex--;
     }
     imgElement.src = imagesArr[imgIndex];
   }
+ 
 </script>
 </body>
 </html>
